@@ -127,7 +127,7 @@ const About = () => {
                 {
                   title: 'The Beginning',
                   content:
-                    'Back in my college days at BAF Shaheen College (Humanities), I was always curious about technology despite studying arts. I started learning basic HTML and CSS from free resources, just to see how websites worked.',
+                    'Back in my college days at BAF Shaheen College,Chittagong (Humanities), I was always curious about technology despite studying arts. I started learning basic HTML and CSS from free resources, just to see how websites worked.',
                 },
                 {
                   title: 'University & Growth',
