@@ -264,7 +264,7 @@ const Contact = () => {
                     <motion.div whileFocus={{ scale: 1.02 }}>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-slate-700 mb-2"
+                        className="block  text-sm font-medium text-black mb-2"
                       >
                         Full Name *
                       </label>
@@ -275,14 +275,14 @@ const Contact = () => {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 text-black focus:border-transparent transition-colors"
                         placeholder="Your full name"
                       />
                     </motion.div>
                     <motion.div whileFocus={{ scale: 1.02 }}>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-slate-700 mb-2"
+                        className="block text-sm text-black font-medium text-slate-700 mb-2"
                       >
                         Email Address *
                       </label>
@@ -293,7 +293,7 @@ const Contact = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border text-black border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                         placeholder="your.email@example.com"
                       />
                     </motion.div>
@@ -302,7 +302,7 @@ const Contact = () => {
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-slate-700 mb-2"
+                      className="block text-black text-sm font-medium text-slate-700 mb-2"
                     >
                       Subject *
                     </label>
@@ -312,7 +312,7 @@ const Contact = () => {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                      className="w-full text-black px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                     >
                       <option value="" disabled>
                         Select a subject
@@ -328,7 +328,7 @@ const Contact = () => {
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-slate-700 mb-2"
+                      className="block text-black text-sm font-medium text-slate-700 mb-2"
                     >
                       Message *
                     </label>
@@ -340,7 +340,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell me about your project..."
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg resize-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                      className="w-full text-black px-4 py-3 border border-slate-300 rounded-lg resize-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                     />
                   </motion.div>
 
