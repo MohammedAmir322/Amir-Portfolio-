@@ -34,6 +34,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -48,10 +49,16 @@ const About = () => {
             About Me
           </motion.h1>
           <motion.p variants={itemVariants} className="text-slate-600 max-w-2xl mx-auto">
-            Passionate developer with 5+ years of experience creating web applications
+            Hi! I'm a passionate and curious developer currently pursuing a BBA at Premier University, Chittagong. 
+            My journey into programming started from a simple curiosity about how websites and apps work, 
+            and over time, it turned into a deep love for creating functional, beautiful, and scalable web applications. 
+            I enjoy working on both frontend and backend, but I especially love crafting smooth user experiences.
+            Outside of coding, I’m into reading, football, and exploring new technologies. 
+            I’m driven by the belief that technology can make everyday life simpler and more enjoyable.
           </motion.p>
         </motion.div>
 
+        {/* About Content */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -63,12 +70,13 @@ const About = () => {
               Creating digital solutions that make a difference
             </h2>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              I'm a full-stack developer with a passion for building scalable web applications and solving complex problems. My experience spans from frontend
-              frameworks like React and Vue.js to backend technologies including Node.js and Python.
+              My work focuses on building clean, user-friendly, and efficient web applications. 
+              I love challenges that push me to learn something new, whether it's a new framework, 
+              an advanced API integration, or optimizing performance for large-scale applications.
             </p>
             <p className="text-slate-600 mb-8 leading-relaxed">
-              When I'm not coding, you can find me contributing to open source projects, writing technical articles, or exploring new technologies. I believe in writing
-              clean, maintainable code and creating user experiences that delight.
+              When I’m not coding, you might find me reading non-fiction books, 
+              enjoying football matches, or exploring graphic design as a creative outlet.
             </p>
 
             <div className="grid grid-cols-2 gap-6">
@@ -83,25 +91,27 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-center p-6 bg-gradient-to-br from-blue-50 to-teal-50 rounded-lg"
               >
-                <div className="text-3xl font-bold text-blue-600 mb-2">5+</div>
-                <div className="text-slate-600">Years Experience</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">3+</div>
+                <div className="text-slate-600">Years Coding Experience</div>
               </motion.div>
             </div>
           </motion.div>
 
+          {/* Image */}
           <motion.div variants={itemVariants} className="relative">
             <motion.div
               whileHover={{ rotate: 3 }}
               className="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl transform rotate-6"
             ></motion.div>
             <img
-              src="https://images.pexels.com/photos/3861943/pexels-photo-3861943.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="https://i.ibb.co.com/YFyz62px/saas-concept-collage.jpg"
               alt="Working"
               className="relative rounded-2xl shadow-xl"
             />
           </motion.div>
         </motion.div>
 
+        {/* My Journey Section */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -117,17 +127,17 @@ const About = () => {
                 {
                   title: 'The Beginning',
                   content:
-                    'Started my journey in computer science with a fascination for how things work behind the scenes. My first "Hello World" program sparked a passion that continues to drive me today.',
+                    'Back in my college days at BAF Shaheen College (Humanities), I was always curious about technology despite studying arts. I started learning basic HTML and CSS from free resources, just to see how websites worked.',
                 },
                 {
-                  title: 'Professional Growth',
+                  title: 'University & Growth',
                   content:
-                    'Transitioned from learning to building real-world applications. Each project taught me something new about scalability, user experience, and the importance of clean, maintainable code.',
+                    'When I joined Premier University for my BBA, I started taking programming seriously. I explored JavaScript, React, and backend technologies, slowly building real-world projects and understanding how to solve complex problems with code.',
                 },
                 {
                   title: 'Today & Beyond',
                   content:
-                    "Now I focus on creating solutions that not only work well but also provide exceptional user experiences. I'm always learning new technologies and methodologies to stay at the forefront of development.",
+                    'Now, I focus on full-stack development and building scalable, user-friendly applications. My goal is to combine my business knowledge from BBA with my technical skills to create impactful digital products. The journey is just beginning!',
                 },
               ].map((item) => (
                 <motion.div

@@ -34,7 +34,7 @@ const Hero = () => {
                         className="inline-block p-1 rounded-full bg-gradient-to-r from-blue-600 to-teal-600 mb-8"
                     >
                         <img
-                            src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+                            src="https://i.ibb.co.com/GQfM6vzY/1000002675-01.jpg"
                             alt="John Doe - Full Stack Developer"
                             className="w-32 h-32 rounded-full object-cover"
                         />

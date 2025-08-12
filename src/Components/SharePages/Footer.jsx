@@ -8,17 +8,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: 'https://github.com',
+      href: 'https://github.com/MohammedAmir322',
       label: 'GitHub'
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/mohammad-amir-hossain/',
       label: 'LinkedIn'
     },
     {
       icon: Mail,
-      href: 'mailto:john.doe@example.com',
+      href: 'mailto:mohammedamir5949@gmail.com',
       label: 'Email'
     }
   ];
@@ -40,10 +40,10 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent mb-4"
             >
-              John Doe
+              MD.Amir Hossain
             </motion.div>
             <p className="text-slate-400 mb-4">
-              Full Stack Developer passionate about creating exceptional digital experiences 
+              FulAStack Developer passionate about creating exceptional digital experiences 
               with clean code and innovative solutions.
             </p>
             <div className="flex space-x-4">
@@ -68,7 +68,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {[
-                { id: 'hero', label: 'Home' },
+                { id: 'hero', label: '' },
                 { id: 'about', label: 'About' },
                 { id: 'skills', label: 'Skills' },
                 { id: 'projects', label: 'Projects' },
@@ -90,9 +90,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-2 text-slate-400">
-              <p>📧 john.doe@example.com</p>
-              <p>📱 +1 (555) 123-4567</p>
-              <p>📍 San Francisco, CA</p>
+              <p>📧 mohammedamir5949@gmail.com</p>
+              <p>📱 +8801627698127</p>
+              <p>📍 Chittagong,Bangladesh</p>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ const Footer = () => {
               animate={{ opacity: 1 }}
               className="text-slate-400 flex items-center"
             >
-              © {currentYear} John Doe. Made with{' '}
+              © {currentYear} MD.Amir Hossain. Made with{' '}
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}

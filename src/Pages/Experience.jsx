@@ -57,21 +57,6 @@ const Experience = () => {
     },
   ];
 
-  const education = [
-    {
-      degree: 'Bachelor of Science in Computer Science',
-      school: 'University of Technology',
-      location: 'California, USA',
-      period: '2015 - 2019',
-      gpa: '3.8/4.0',
-      achievements: [
-        'Graduated Magna Cum Laude',
-        'President of Computer Science Club',
-        'Winner of Annual Hackathon 2018',
-      ],
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -125,7 +110,6 @@ const Experience = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="mb-20"
         >
           <motion.h2
             variants={itemVariants}
@@ -214,9 +198,7 @@ const Experience = () => {
                         <motion.span
                           key={tech}
                           initial={{ scale: 0 }}
-                          animate={
-                            inView ? { scale: 1 } : { scale: 0 }
-                          }
+                          animate={inView ? { scale: 1 } : { scale: 0 }}
                           transition={{
                             delay: index * 0.2 + techIndex * 0.05,
                           }}
@@ -228,84 +210,6 @@ const Experience = () => {
                     </div>
                   </div>
                 </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Education */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl font-bold text-slate-900 mb-8"
-          >
-            Education
-          </motion.h2>
-          <div className="max-w-4xl mx-auto">
-            {education.map((edu, index) => (
-              <motion.div
-                key={edu.degree}
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white p-8 rounded-xl shadow-sm"
-              >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-1">
-                      {edu.degree}
-                    </h3>
-                    <h4 className="text-lg text-teal-600 font-medium mb-2">
-                      {edu.school}
-                    </h4>
-                  </div>
-                  <div className="flex flex-col lg:items-end space-y-1">
-                    <span className="inline-flex items-center text-sm text-blue-600 font-medium bg-blue-100 px-3 py-1 rounded-full">
-                      <Calendar size={14} className="mr-1" />
-                      {edu.period}
-                    </span>
-                    <span className="inline-flex items-center text-sm text-slate-600">
-                      <MapPin size={14} className="mr-1" />
-                      {edu.location}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <span className="text-slate-600">
-                    GPA:{' '}
-                    <span className="font-semibold text-slate-900">
-                      {edu.gpa}
-                    </span>
-                  </span>
-                </div>
-
-                <div>
-                  <h5 className="font-semibold text-slate-900 mb-3">
-                    Achievements:
-                  </h5>
-                  <ul className="space-y-2">
-                    {edu.achievements.map((achievement, i) => (
-                      <motion.li
-                        key={i}
-                        initial={{ x: -20, opacity: 0 }}
-                        animate={
-                          inView
-                            ? { x: 0, opacity: 1 }
-                            : { x: -20, opacity: 0 }
-                        }
-                        transition={{ delay: i * 0.1 }}
-                        className="flex items-start"
-                      >
-                        <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-slate-600">{achievement}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
               </motion.div>
             ))}
           </div>

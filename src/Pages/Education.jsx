@@ -11,47 +11,52 @@ const Education = () => {
 
   const education = [
     {
-      degree: 'Master of Science in Computer Science',
-      school: 'Stanford University',
-      location: 'California, USA',
-      period: '2017 - 2019',
-      gpa: '3.9/4.0',
-      description:
-        'Specialized in Machine Learning and Software Engineering with focus on scalable web applications.',
-      achievements: [
-        'Graduated Summa Cum Laude',
-        'Research Assistant in AI Lab',
-        'Published 2 papers in IEEE conferences',
-        'Winner of Graduate Student Excellence Award',
-      ],
-      coursework: [
-        'Advanced Algorithms',
-        'Machine Learning',
-        'Database Systems',
-        'Software Architecture',
-      ],
-    },
+  degree: 'Bachelor of Business Administration (BBA)',
+  school: 'Premier University',
+  location: 'Chittagong, Bangladesh',
+  period: '2021 - 2025',
+  gpa: '3.15/4.0',
+  description:
+    'Focused on Business Management, Finance, and Marketing with hands-on experience in case studies, business simulations, and entrepreneurial projects.',
+  achievements: [
+    'Top 10 in National Business Case Competition 2023',
+    'Vice President of Business Club',
+    'Organized International Business Summit 2024',
+    'Recipient of University Merit Scholarship (2 years)',
+  ],
+  coursework: [
+    'Principles of Management',
+    'Financial Accounting',
+    'Marketing Management',
+    'Business Communication',
+    'Organizational Behavior',
+    'Entrepreneurship Development',
+  ],
+},
     {
-      degree: 'Bachelor of Science in Computer Science',
-      school: 'University of California, Berkeley',
-      location: 'California, USA',
-      period: '2013 - 2017',
-      gpa: '3.8/4.0',
-      description:
-        'Strong foundation in computer science fundamentals with emphasis on software development.',
-      achievements: [
-        'Graduated Magna Cum Laude',
-        'President of Computer Science Club',
-        'Winner of Annual Hackathon 2016',
-        "Dean's List for 6 semesters",
-      ],
-      coursework: [
-        'Data Structures',
-        'Operating Systems',
-        'Computer Networks',
-        'Web Development',
-      ],
-    },
+  degree: 'Higher Secondary Certificate (HSC) - Humanities',
+  school: 'BAF Shaheen College, Chittagong',
+  location: 'Chittagong, Bangladesh',
+  period: '2018 - 2020',
+  gpa: '3.8/5.0',
+  description:
+    'Completed Higher Secondary studies in the Humanities stream, developing strong analytical, writing, and critical thinking skills through diverse subjects.',
+  achievements: [
+    'Top 10 in college in final board examinations',
+    'Secretary of Debate Club',
+    'Winner of Inter-College Debate Competition 2019',
+    'Organized annual cultural festival',
+  ],
+  coursework: [
+    'Bangla Literature',
+    'English Literature',
+    'History',
+    'Civics & Good Governance',
+    'Economics',
+    'Social Science',
+  ],
+},
+
   ];
 
   const containerVariants = {
