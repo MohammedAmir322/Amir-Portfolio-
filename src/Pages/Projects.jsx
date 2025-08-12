@@ -11,18 +11,18 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Hostel Management system for a university',
       description: 'Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern technologies for optimal performance and user experience.',
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
+      tech: ['React', 'Node.js','Tailwind CSS','MongoDB'],
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
       github: '#',
-      live: '#',
+      live: 'https://hotel-foods.web.app/',
       featured: true
     },
     {
       title: 'Task Management App',
       description: 'Collaborative project management tool with real-time updates, file sharing, and team communication features.',
-      tech: ['Next.js', 'TypeScript', 'Prisma', 'Socket.io'],
+      tech: ['React', 'Node.js','Tailwind CSS','MongoDB'],
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
       github: '#',
       live: '#',
@@ -31,10 +31,10 @@ const Projects = () => {
     {
       title: 'Analytics Dashboard',
       description: 'Data visualization platform with interactive charts, real-time metrics, and custom reporting capabilities.',
-      tech: ['React', 'D3.js', 'Python', 'FastAPI'],
-      image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=600',
+      tech: ['React', 'Node.js','Tailwind CSS','MongoDB'],
+      image: 'https://i.ibb.co.com/m5F4GRMF/image.png',
       github: '#',
-      live: '#',
+      live: 'https://product-recomandation.web.app/',
       featured: true
     },
     {
