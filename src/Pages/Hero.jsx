@@ -1,22 +1,45 @@
 import React from 'react';
 import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';  // ✅ correct import
 
 const Hero = () => {
+    // Helper Functions
     const handleResumeDownload = () => {
         const link = document.createElement('a');
-        link.href = '/resume/John_Doe_Resume.pdf'; // <-- update this path!
-        link.download = 'John_Doe_Resume.pdf';
+        link.href = './AMir-Resume.pdf'; // public ফোল্ডারে সরাসরি path
+        link.download = 'Amir-Resume.pdf'; // ডাউনলোডের সময় যে নাম হবে
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     };
+
+    // Helper Component for Social Links
+    const SocialLink = ({ href, icon }) => (
+        <motion.a
+            whileHover={{ scale: 1.2, rotate: 5 }}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-blue-600 transition-colors"
+        >
+            {icon}
+        </motion.a>
+    );
+
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
+    };
+
+    // Animation Variants
+    const fadeInUp = {
+        initial: { y: 30, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+        transition: { duration: 0.8 }
     };
 
     return (
@@ -26,6 +49,7 @@ const Hero = () => {
         >
             <div className="max-w-7xl mx-auto">
                 <div className="text-center py-20">
+
                     {/* Profile Image */}
                     <motion.div
                         initial={{ scale: 0, opacity: 0 }}
@@ -36,15 +60,14 @@ const Hero = () => {
                         <img
                             src="https://i.ibb.co.com/GQfM6vzY/1000002675-01.jpg"
                             alt="John Doe - Full Stack Developer"
-                            className="w-32 h-32 rounded-full object-cover"
+                            className="w-48 h-48 rounded-full object-cover"
                         />
                     </motion.div>
 
-                    {/* Name and Designation */}
+                    {/* Name and Title Section */}
                     <motion.h1
-                        initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        {...fadeInUp}
+                        transition={{ ...fadeInUp.transition, delay: 0.2 }}
                         className="text-5xl md:text-6xl font-bold text-slate-900 mb-4"
                     >
                         Hi, I'm{' '}
@@ -54,19 +77,29 @@ const Hero = () => {
                     </motion.h1>
 
                     <motion.h2
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
+                        {...fadeInUp}
+                        transition={{ ...fadeInUp.transition, delay: 0.3 }}
                         className="text-2xl md:text-3xl font-semibold text-blue-600 mb-6"
                     >
-                        Full Stack Developer
+                        <Typewriter
+                                words={[
+                                    'Full Stack Developer',
+                                    'MERN Stack Developer',
+                                    'Web Developer'
+                                ]}
+                                loop={true}
+                                cursor
+                                cursorStyle="|"
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+                            />
                     </motion.h2>
 
-                    {/* Introduction */}
+                    {/* Introduction Text */}
                     <motion.p
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        {...fadeInUp}
+                        transition={{ ...fadeInUp.transition, delay: 0.4 }}
                         className="text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
                     >
                         Passionate about creating exceptional digital experiences with clean code and innovative
@@ -75,13 +108,12 @@ const Hero = () => {
 
                     {/* Action Buttons */}
                     <motion.div
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
+                        {...fadeInUp}
+                        transition={{ ...fadeInUp.transition, delay: 0.6 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
                     >
                         <button
-                            onClick={() => scrollToSection('/projects')}
+                            onClick={() => scrollToSection('projects')}
                             className="px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-full font-medium hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
                         >
                             View My Work
@@ -101,41 +133,18 @@ const Hero = () => {
                         </button>
                     </motion.div>
 
-                    {/* Social Links */}
+                    {/* Social Media Links */}
                     <motion.div
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
+                        {...fadeInUp}
+                        transition={{ ...fadeInUp.transition, delay: 0.8 }}
                         className="flex justify-center space-x-6 mb-16"
                     >
-                        <motion.a
-                            whileHover={{ scale: 1.2, rotate: 5 }}
-                            href="https://github.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-slate-400 hover:text-blue-600 transition-colors"
-                        >
-                            <Github size={28} />
-                        </motion.a>
-                        <motion.a
-                            whileHover={{ scale: 1.2, rotate: -5 }}
-                            href="https://linkedin.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-slate-400 hover:text-blue-600 transition-colors"
-                        >
-                            <Linkedin size={28} />
-                        </motion.a>
-                        <motion.a
-                            whileHover={{ scale: 1.2, rotate: 5 }}
-                            href="mailto:john.doe@example.com"
-                            className="text-slate-400 hover:text-blue-600 transition-colors"
-                        >
-                            <Mail size={28} />
-                        </motion.a>
+                        <SocialLink href="https://github.com/MohammedAmir322" icon={<Github size={28} />} />
+                        <SocialLink href="https://www.linkedin.com/in/md-amir-hossain25/" icon={<Linkedin size={28} />} />
+                        <SocialLink href="mailto:mohammedamir5949@gmail.com" icon={<Mail size={28} />} />
                     </motion.div>
 
-                    {/* Scroll Down Indicator */}
+                    {/* Scroll Indicator */}
                     <motion.div
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
@@ -150,5 +159,7 @@ const Hero = () => {
         </section>
     );
 };
+
+
 
 export default Hero;

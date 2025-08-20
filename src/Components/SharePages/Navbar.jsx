@@ -1,57 +1,80 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('hero');
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Education', path: '/education' },
-    { name: 'Experience', path: '/experience' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' },
+    { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'education', label: 'Education' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
   ];
 
-  const handleResumeDownload = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(navItems[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+    const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Put your resume.pdf in public folder
-    link.download = 'MD_Amir_Hossain_Resume.pdf';
+    link.href = '/AMir-Resume.pdf';
+    link.download = 'AMir-Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+};
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link
-            to="/"
+          <button
+            onClick={() => scrollToSection('hero')}
             className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform"
           >
             MD.AMIR HOSSAIN
-          </Link>
+          </button>
 
-          {/* Desktop Menu */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 className={`transition-all duration-200 hover:text-blue-600 hover:scale-105 ${
-                  location.pathname === item.path
-                    ? 'text-blue-600 font-semibold'
-                    : 'text-slate-600'
+                  activeSection === item.id ? 'text-blue-600 font-semibold' : 'text-slate-600'
                 }`}
               >
-                {item.name}
-              </Link>
+                {item.label}
+              </button>
             ))}
             <button
               onClick={handleResumeDownload}
@@ -66,6 +89,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-md text-slate-600 hover:text-blue-600 transition-colors"
+            aria-label="Toggle menu"
           >
             <motion.div
               key={isMenuOpen ? 'close' : 'menu'}
@@ -91,18 +115,17 @@ const Navbar = () => {
               className="md:hidden pb-4 border-t border-slate-200 mt-2 pt-4"
             >
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left py-3 px-4 rounded-md transition-colors ${
-                    location.pathname === item.path
+                    activeSection === item.id
                       ? 'text-blue-600 bg-blue-50 font-semibold'
                       : 'text-slate-600 hover:text-blue-600 hover:bg-slate-50'
                   }`}
                 >
-                  {item.name}
-                </Link>
+                  {item.label}
+                </button>
               ))}
               <button
                 onClick={() => {
